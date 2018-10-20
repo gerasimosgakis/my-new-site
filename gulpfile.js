@@ -63,7 +63,7 @@ gulp.task('default', ['watch']);
 
 gulp.task('html:dist', () => {
     return gulp.src(paths.srcHTML)
-      .pipe(htmlclean())
+    //   .pipe(htmlclean())
       .pipe(gulp.dest(paths.dist));
 });
 
