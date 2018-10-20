@@ -84,8 +84,8 @@ gulp.task('js:dist', () => {
 gulp.task('copy:dist', ['html:dist', 'css:dist', 'js:dist']);
 
 gulp.task('inject:dist', ['copy:dist'], () => {
-    var css = gulp.src(paths.distCSS);
-    var js = gulp.src(paths.distJS);
+    const css = gulp.src(paths.distCSS);
+    const js = gulp.src(paths.distJS);
     return gulp.src(paths.distIndex)
       .pipe(inject( css, { relative:true } ))
       .pipe(inject( js, { relative:true } ))
