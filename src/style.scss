@@ -206,6 +206,13 @@ html, body {
       color: white;
     }
   }
+  .placeholder {
+    img {
+      margin-top: 100px;
+      width: 300px;
+      height: 300px;
+    }
+  }
 }
 
 .contact {
@@ -217,7 +224,7 @@ html, body {
   background: #191919;
   &:after {
     content: "";
-    background: url("background-images/pexels-photo.png");
+    background: url("../images/pexels-photo.png");
     background-size: cover;
     background-repeat: no-repeat;
     opacity: 0.8;
@@ -255,6 +262,12 @@ html, body {
       background: #3B5998;
       color: white;
     }
+
+    .fa-github {
+      background: black;
+      color: white;
+    }
+
     .fa-linkedin {
       background: #007bb5;
       color: white;
@@ -264,7 +277,7 @@ html, body {
       color: white;
     }
     .fa-envelope {
-      background: black;
+      background: #a22323;
       color: white;
     }
   }
@@ -343,4 +356,207 @@ footer {
         -webkit-transform: translate(0);
         transform: translate(0)
     }
+}
+
+@media only screen and (min-width: 461px) {
+  .topnav {
+    float: left;
+    height: 46px;
+    font-size: 15pt;
+    top: 0;
+    width: 100%;
+    position: fixed;
+    background: black;
+    z-index: 100;
+    a {
+      text-decoration: none;
+      color: #c1c1c1;
+      padding: 10px 15px 10px 10px;
+    }
+    a:first-child {
+      position: relative;
+      top: 10px;
+      height: 100%;
+      color: #191919;
+      background-color: #e5e5e5;
+    }
+    a:not(:first-child) {
+      padding: 10px 15px 10px 10px;
+      display: inherit;
+      float: right;
+    }
+    a.icon {
+      //top: -100px;
+      float: right;
+      display: none;;
+      padding: 0 10px 0 0;
+    }
+  }
+  
+  .main-page {
+    h1 {
+      font-size: 60pt;
+      span{
+        margin-left: 20%;
+        animation: fadeIn 2s ease-in 0s backwards;
+      }
+      span:nth-child(2){
+        font-size: 70pt;
+        margin-left: 30%;
+        animation: fadeIn 2s ease-in 1s backwards;
+      }
+      span:nth-child(3){
+        font-size: 50pt;
+        margin-left: 40%;
+        animation: fadeIn 2s ease-in 2s backwards;
+      }
+    }
+    h2 {
+      font-size: 3em;
+    }
+  }
+  
+  .about {
+    .about-bio-container {
+      font-size: 20pt;
+    }
+  }
+
+  .projects {
+    .placeholder {
+      img {
+        margin-top: 100px;
+        width: 500px;
+        height: 400px;
+      }
+    }
+  }
+  
+}
+
+@media only screen and (min-width: 833px) {
+  .main-page {
+    h1 {
+      font-size: 80pt;
+      span{
+        margin-left: 30%;
+        animation: fadeIn 2s ease-in 0s backwards;
+      }
+      span:nth-child(2){
+        font-size: 90pt;
+        margin-left: 35%;
+        animation: fadeIn 2s ease-in 1s backwards;
+      }
+      span:nth-child(3){
+        font-size: 70pt;
+        margin-left: 40%;
+        animation: fadeIn 2s ease-in 2s backwards;
+      }
+    }
+    h2 {
+      font-size: 4em;
+    }
+  }
+  
+  
+  .about {
+    min-height: 2500px;
+    .about-title-container {
+      a {
+        font-size: 75pt;
+      }
+    }
+    .my-pic-container {
+      width: 40%;
+      max-width: 400px;
+      margin: auto;
+    }
+    .about-bio-container {
+      font-size: 25pt;
+      margin-left: 15%;
+      margin-right: 15%;
+    }
+  }
+  
+  .projects {
+    .gallery {
+      max-width: 800px;
+      .gallery-cell {
+        height: 500px;
+        img {
+          height: 400px;
+        }
+      }
+    }
+  }
+  
+  .contact {
+    h1 {
+      font-size: 5.5em;
+    }
+    .social-media {
+      //position: relative;
+      //top: 60px;
+      //text-align: center;
+      .fa {
+        //padding-top: 10px;
+        //padding-bottom: 0;
+        font-size: 80px;
+        width: 100px;
+        height: 100px;
+        //text-align: center;
+        //text-decoration: none;
+        //margin: 0 5px 0 5px;
+        //&:hover {
+          //opacity: 0.7;
+        //}
+      }
+    }
+  }  
+}
+
+@media screen and (max-width: 900px) and (orientation: landscape) {
+  .main-page {
+    width: 100%;
+    height: 800px;
+    position: fixed;
+    font-weight: lighter;
+    h1 {
+      margin-top: 20px;
+      font-size: 30pt;
+      span{
+        margin-left: 20%;
+        animation: fadeIn 1s ease-in 0s backwards;
+      }
+      span:nth-child(2){
+        font-size: 40pt;
+        margin-left: 30%;
+        animation: fadeIn 1s ease-in 0.5s backwards;
+      }
+      span:nth-child(3){
+        font-size: 20pt;
+        margin-left: 40%;
+        animation: fadeIn 1s ease-in 1s backwards;
+      }
+    }
+    h2 {
+      font-size: 2em;
+    }
+  }
+  
+  .about {
+    position: relative;
+    top: 400px;
+  }
+
+  .projects {
+    .placeholder {
+      img {
+        margin-top: 100px;
+        width: 700px;
+        height: 600px;
+      }
+    }
+  }
+  
 }
