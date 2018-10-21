@@ -19,5 +19,9 @@
     "gulp-uglify": "^3.0.1",
     "gulp-webserver": "^0.9.1",
     "node-sass": "^4.9.4"
+  },
+  "dependencies": {
+    "autoprefixer": "^9.2.1",
+    "gulp-autoprefixer": "^6.0.0"
   }
 }

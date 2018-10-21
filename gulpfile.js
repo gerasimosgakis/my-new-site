@@ -6,11 +6,13 @@ const cleanCSS = require('gulp-clean-css');
 const concat = require('gulp-concat');
 const uglify = require('gulp-uglify');
 const del = require('del');
+const autoprefixer = require('gulp-autoprefixer');
 const sass = require('gulp-sass');
-sass.compiler = require('node-sass');
+
 const paths = {
     src: 'src/**/*',
     srcHTML: 'src/**/*.html',
+    srcSCSS: 'src/**/*.scss',
     srcCSS: 'src/**/*.css',
     srcJS: 'src/**/*.js',
 
@@ -30,9 +32,16 @@ gulp.task('html', () => {
             .pipe(gulp.dest(paths.tmp));
 });
 
-gulp.task('sass', () => {
-    return gulp.src('src/**/*.scss')
-      .pipe(sass().on('error', sass.logError))
+gulp.task("scss", function() {
+    return gulp
+      .src(paths.srcSCSS)
+      .pipe(sass())
+      .on("error", sass.logError)
+      .pipe(
+          autoprefixer({
+              browsers: ["last 2 versions"]
+          })
+      )
       .pipe(gulp.dest(paths.tmp));
 });
 
@@ -44,7 +53,7 @@ gulp.task('js', function () {
     return gulp.src(paths.srcJS).pipe(gulp.dest(paths.tmp));
 });
 
-gulp.task('copy', ['html', 'css', 'js']);
+gulp.task('copy', ['html', 'scss', 'js']);
 
 gulp.task('inject', ['copy'], () => {
     const css = gulp.src(paths.tmpCSS);
@@ -66,10 +75,6 @@ gulp.task('serve', ['inject'], () => {
 gulp.task('watch', ['serve'], () => {
     gulp.watch(paths.src, ['inject']);
 });
-
-// gulp.task('sass:watch', function () {
-//     gulp.watch('./sass/**/*.scss', ['sass']);
-// });
 
 gulp.task('default', ['watch']);
 
