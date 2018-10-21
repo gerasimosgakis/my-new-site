@@ -1,3 +1,32 @@
-.awesome {
-    color: green;
-}
+html, body {
+  width: 100%;
+  margin: 0;
+  font-family: "Dosis", sans-serif;
+  overflow-x: hidden; }
+
+#container {
+  min-height: 100%;
+  position: relative; }
+
+.topnav {
+  height: 141px;
+  font-size: 1.5em;
+  top: 0;
+  width: 100%;
+  position: fixed;
+  background: black;
+  z-index: 100; }
+  .topnav a {
+    text-decoration: none;
+    color: #c1c1c1;
+    padding: 10px 15px 10px 10px; }
+  .topnav a:first-child {
+    height: 100%;
+    color: #191919;
+    background-color: #e5e5e5; }
+  .topnav a:not(:first-child) {
+    display: none; }
+  .topnav a.icon {
+    float: right;
+    display: block;
+    padding: 0 10px 0 0; }

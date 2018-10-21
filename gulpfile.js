@@ -6,6 +6,8 @@ const cleanCSS = require('gulp-clean-css');
 const concat = require('gulp-concat');
 const uglify = require('gulp-uglify');
 const del = require('del');
+const sass = require('gulp-sass');
+sass.compiler = require('node-sass');
 const paths = {
     src: 'src/**/*',
     srcHTML: 'src/**/*.html',
@@ -26,6 +28,12 @@ const paths = {
 gulp.task('html', () => {
     return gulp.src(paths.srcHTML)
             .pipe(gulp.dest(paths.tmp));
+});
+
+gulp.task('sass', () => {
+    return gulp.src('src/**/*.scss')
+      .pipe(sass().on('error', sass.logError))
+      .pipe(gulp.dest(paths.tmp));
 });
 
 gulp.task('css', function () {
@@ -58,6 +66,10 @@ gulp.task('serve', ['inject'], () => {
 gulp.task('watch', ['serve'], () => {
     gulp.watch(paths.src, ['inject']);
 });
+
+// gulp.task('sass:watch', function () {
+//     gulp.watch('./sass/**/*.scss', ['sass']);
+// });
 
 gulp.task('default', ['watch']);
 
