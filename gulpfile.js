@@ -13,7 +13,7 @@ const paths = {
     src: 'src/**/*',
     srcHTML: 'src/**/*.html',
     srcSCSS: 'src/**/*.scss',
-    srcCSS: 'src/**/*.css',
+    srcCSS: 'src/',
     srcJS: 'src/**/*.js',
     srcImgs: 'src/images/*',
 
@@ -45,6 +45,7 @@ gulp.task("scss", function() {
               browsers: ["last 2 versions"]
           })
       )
+      .pipe(gulp.dest(paths.srcCSS))
       .pipe(gulp.dest(paths.tmp));
 });
 
@@ -110,7 +111,7 @@ gulp.task('imgs:dist', () => {
       .pipe(gulp.dest(paths.distImgs));
 });
 
-gulp.task('copy:dist', ['html:dist', 'css:dist', 'js:dist']);
+gulp.task('copy:dist', ['html:dist', 'css:dist', 'js:dist', 'imgs:dist']);
 
 gulp.task('inject:dist', ['copy:dist'], () => {
     const css = gulp.src(paths.distCSS);
