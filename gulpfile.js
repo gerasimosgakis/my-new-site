@@ -15,16 +15,19 @@ const paths = {
     srcSCSS: 'src/**/*.scss',
     srcCSS: 'src/**/*.css',
     srcJS: 'src/**/*.js',
+    srcImgs: 'src/images/*',
 
     tmp: 'tmp',
     tmpIndex: 'tmp/index.html',
     tmpCSS: 'tmp/**/*.css',
     tmpJS: 'tmp/**/*.js',
+    tmpImgs: 'tmp/images/',
 
     dist: 'dist',
     distIndex: 'dist/index.html',
     distCSS: 'dist/**/*.css',
-    distJS: 'dist/**/*.js'
+    distJS: 'dist/**/*.js',
+    distImgs: 'dist/images/'
 }
 
 gulp.task('html', () => {
@@ -53,7 +56,11 @@ gulp.task('js', function () {
     return gulp.src(paths.srcJS).pipe(gulp.dest(paths.tmp));
 });
 
-gulp.task('copy', ['html', 'scss', 'js']);
+gulp.task('imgs', () => {
+    return gulp.src(paths.srcImgs).pipe(gulp.dest(paths.tmpImgs));
+});
+
+gulp.task('copy', ['html', 'scss', 'js', 'imgs']);
 
 gulp.task('inject', ['copy'], () => {
     const css = gulp.src(paths.tmpCSS);
@@ -96,6 +103,11 @@ gulp.task('js:dist', () => {
       .pipe(concat('script.min.js'))
       .pipe(uglify())
       .pipe(gulp.dest(paths.dist));
+});
+
+gulp.task('imgs:dist', () => {
+    return gulp.src(paths.srcImgs)
+      .pipe(gulp.dest(paths.distImgs));
 });
 
 gulp.task('copy:dist', ['html:dist', 'css:dist', 'js:dist']);
