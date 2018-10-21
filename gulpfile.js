@@ -93,7 +93,7 @@ gulp.task('html:dist', () => {
 });
 
 gulp.task('css:dist', () => {
-    return gulp.src(paths.srcCSS)
+    return gulp.src('src/**/*.css')
       .pipe(concat('style.min.css'))
       .pipe(cleanCSS())
       .pipe(gulp.dest(paths.dist));
