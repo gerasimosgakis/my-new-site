@@ -104,7 +104,7 @@ html, body {
   position: relative;
   top: 800px;
   width: 100%;
-  min-height: 2000px;
+  min-height: 2400px;
   background: #191919;
   color: white;
   .about-title-container {
@@ -425,6 +425,7 @@ footer {
   }
   
   .about {
+    min-height: 2550px;
     .about-bio-container {
       font-size: 20pt;
     }
@@ -468,7 +469,7 @@ footer {
   
   
   .about {
-    min-height: 2500px;
+    min-height: 2800px;
     .about-title-container {
       a {
         font-size: 75pt;

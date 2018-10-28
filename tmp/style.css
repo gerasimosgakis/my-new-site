@@ -90,7 +90,7 @@ html, body {
   position: relative;
   top: 800px;
   width: 100%;
-  min-height: 2000px;
+  min-height: 2400px;
   background: #191919;
   color: white; }
   .about .about-title-container {
@@ -384,8 +384,10 @@ footer {
               animation: fadeIn 2s ease-in 2s backwards; }
   .main-page h2 {
     font-size: 3em; }
-  .about .about-bio-container {
-    font-size: 20pt; }
+  .about {
+    min-height: 2550px; }
+    .about .about-bio-container {
+      font-size: 20pt; }
   .projects .placeholder img {
     margin-top: 100px;
     width: 500px;
@@ -411,7 +413,7 @@ footer {
   .main-page h2 {
     font-size: 4em; }
   .about {
-    min-height: 2500px; }
+    min-height: 2800px; }
     .about .about-title-container a {
       font-size: 75pt; }
     .about .my-pic-container {
