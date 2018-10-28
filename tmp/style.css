@@ -165,6 +165,12 @@ html, body {
       height: 400px;
       margin-right: 10px;
       counter-increment: gallery-cell; }
+      .projects .gallery .gallery-cell h2 {
+        color: white;
+        margin-bottom: 0;
+        font-size: 30px; }
+      .projects .gallery .gallery-cell a {
+        color: yellow; }
       .projects .gallery .gallery-cell img {
         height: 300px;
         margin-top: 50px; }

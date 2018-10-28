@@ -193,6 +193,14 @@ html, body {
       height: 400px;
       margin-right: 10px;
       counter-increment: gallery-cell;
+      h2 {
+        color: white;
+        margin-bottom: 0;
+        font-size: 30px;
+      }
+      a {
+        color: yellow;
+      }
       img {
         height: 300px;
         margin-top: 50px;
